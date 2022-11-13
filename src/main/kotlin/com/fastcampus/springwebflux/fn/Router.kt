@@ -21,8 +21,8 @@ class Router {
     fun userRouter(handler: UserHandler): RouterFunction<ServerResponse> =
         router {
             "/users".nest {
-                GET("/users/{id}", handler::getUser)
-                GET("/users", handler::getAll)
+                GET("/{id}", handler::getUser)
+                GET("", handler::getAll)
             }
         }
 
